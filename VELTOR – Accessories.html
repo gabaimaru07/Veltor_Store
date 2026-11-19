@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>VELTOR – Accessories</title>
+<style>
+:root{--bg:#fafafa;--tx:#111;--mu:#666;--gl:rgba(255,255,255,.55);--bd:rgba(0,0,0,.08);--ac:#111;--sh:0 10px 40px rgba(0,0,0,.08);box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme=light]){--bg:#0e0e10;--tx:#f3f3f3;--mu:#9a9a9a;--gl:rgba(40,40,46,.55);--bd:rgba(255,255,255,.1);--ac:#fff;--sh:0 10px 40px rgba(0,0,0,.5)}}
+*{box-sizing:border-box;margin:0}
+body{background:var(--bg);color:var(--tx);font-family:system-ui,"Segoe UI",Tahoma,Arial,sans-serif;line-height:1.6;min-height:100vh;overflow-x:hidden}
+body::before,body::after{content:"";position:fixed;z-index:-1;width:46vmax;height:46vmax;border-radius:50%;filter:blur(90px);opacity:.35;animation:fl 18s ease-in-out infinite alternate}
+body::before{background:#d9c9ff;top:-15vmax;left:-10vmax}
+body::after{background:#ffd9c9;bottom:-18vmax;right:-10vmax;animation-delay:-9s}
+@keyframes fl{to{transform:translate(8vmax,6vmax) scale(1.15)}}
+.glass{background:var(--gl);backdrop-filter:blur(18px) saturate(160%);-webkit-backdrop-filter:blur(18px) saturate(160%);border:1px solid var(--bd);box-shadow:var(--sh),inset 0 1px 0 rgba(255,255,255,.5);border-radius:22px}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;margin:12px auto;max-width:1100px;width:calc(100% - 24px);display:flex;align-items:center;gap:12px;padding:10px 18px;flex-wrap:wrap}
+.logo{font-weight:800;letter-spacing:.25em;font-size:20px;cursor:pointer}
+nav{display:flex;gap:4px;flex:1;flex-wrap:wrap;justify-content:center}
+nav a,.lang button,.btn{border:0;background:none;color:var(--tx);padding:8px 14px;border-radius:99px;cursor:pointer;font:inherit;font-size:14px;text-decoration:none;transition:.25s}
+nav a:hover,nav a.on{background:var(--ac);color:var(--bg)}
+.lang{display:flex;gap:2px}.lang button{padding:6px 10px;font-size:12px}.lang button.on{background:var(--ac);color:var(--bg)}
+main{max-width:1100px;margin:0 auto;padding:12px}
+.page{display:none;animation:in .5s}.page.on{display:block}
+@keyframes in{from{opacity:0;transform:translateY(14px)}}
+.promo{text-align:center;padding:8px;font-size:13px;margin-bottom:12px;overflow:hidden;white-space:nowrap}
+.promo span{display:inline-block;animation:mq 22s linear infinite}
+@keyframes mq{from{transform:translateX(100%)}to{transform:translateX(-100%)}}
+.hero{padding:clamp(28px,6vw,70px);display:grid;gap:30px;grid-template-columns:1.2fr 1fr;align-items:center;perspective:900px}
+@media(max-width:760px){.hero{grid-template-columns:1fr;text-align:center}}
+.hero h1{font-size:clamp(34px,6vw,62px);line-height:1.1;font-weight:800;letter-spacing:-.02em}
+.hero p{color:var(--mu);margin:14px 0 22px;max-width:46ch}
+.btn.p{background:var(--ac);color:var(--bg);padding:12px 26px;box-shadow:var(--sh)}.btn.p:hover{transform:translateY(-2px)}
+.orb{height:260px;position:relative;transform-style:preserve-3d;animation:rot 14s linear infinite}
+.orb i{position:absolute;inset:0;margin:auto;border-radius:50%;border:2px solid var(--tx);opacity:.8;width:220px;height:220px}
+.orb i:nth-child(2){transform:rotateY(60deg)}.orb i:nth-child(3){transform:rotateY(120deg)}
+.orb b{position:absolute;inset:0;margin:auto;width:90px;height:90px;border-radius:50%;background:radial-gradient(circle at 30% 30%,#fff,#ccc 60%,#888);box-shadow:0 20px 40px rgba(0,0,0,.25)}
+@keyframes rot{to{transform:rotateY(360deg) rotateX(20deg)}}
+h2{font-size:26px;margin:34px 6px 16px}
+.welcome{padding:26px;color:var(--mu)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:16px;perspective:1000px}
+.card{padding:14px;transition:transform .15s,box-shadow .3s;transform-style:preserve-3d;will-change:transform}
+.card .img{position:relative;overflow:hidden;aspect-ratio:1;border-radius:16px;display:grid;place-items:center;font-size:64px}
+.card .img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.card h3{font-size:16px;margin:12px 4px 2px}.card .pr{font-weight:700;margin:0 4px}.card small{color:var(--mu);margin:0 4px}
+.tabs{display:flex;gap:8px;margin:20px 6px}
+.tabs button{padding:9px 22px;border:1px solid var(--bd);border-radius:99px;background:var(--gl);color:var(--tx);cursor:pointer;font:inherit}
+.tabs button.on{background:var(--ac);color:var(--bg)}
+.box{padding:clamp(20px,4vw,38px)}.box p{color:var(--mu);margin-bottom:12px}
+input,textarea{width:100%;padding:11px 14px;border-radius:14px;border:1px solid var(--bd);background:var(--gl);color:var(--tx);font:inherit;margin-bottom:10px}
+#modal{display:none;position:fixed;inset:0;z-index:50;background:rgba(0,0,0,.35);backdrop-filter:blur(6px);place-items:center;padding:16px}
+#modal .box{width:100%;max-width:440px;background:var(--bg)}#oMsg{margin:10px 0;font-size:14px}
+footer{text-align:center;color:var(--mu);font-size:13px;padding:30px 0 20px}
+.g1{background:linear-gradient(135deg,#ece6ff,#fff)}.g2{background:linear-gradient(135deg,#ffe9e0,#fff)}.g3{background:linear-gradient(135deg,#e0f3ec,#fff)}.g4{background:linear-gradient(135deg,#e5eefc,#fff)}.g5{background:linear-gradient(135deg,#fff3d6,#fff)}
+</style>
+</head>
+<body>
+<header class="glass">
+  <div class="logo" onclick="go('home')">VELTOR</div>
+  <nav id="nav"></nav>
+  <div class="lang"><button data-l="ar">AR</button><button data-l="fr">FR</button><button data-l="en">EN</button></div>
+</header>
+<main>
+  <section class="page" id="home">
+    <div class="glass promo"><span data-t="promo"></span></div>
+    <div class="glass hero">
+      <div><h1 data-t="h1"></h1><p data-t="sub"></p><button class="btn p" onclick="go('products')" data-t="shop"></button></div>
+      <div class="orb"><i></i><i></i><i></i><b></b></div>
+    </div>
+    <div class="glass welcome" data-t="welcome" style="margin-top:16px"></div>
+    <h2 data-t="new"></h2>
+    <div class="grid" id="newGrid"></div>
+  </section>
+
+  <section class="page" id="products">
+    <h2 data-t="nav_products"></h2>
+    <div class="tabs"><button data-c="w" class="on" data-t="women"></button><button data-c="m" data-t="men"></button></div>
+
+    <!-- ===== المنتجات / Products / Produits =====
+         لتغيير صورة: بدّل المسار في src (ضع الصور في مجلد images)
+         لتغيير الاسم: بدّل data-ar / data-fr / data-en
+         لتغيير الثمن: بدّل data-price في أول سطر للمنتج
+         data-cat: w = نساء ، m = رجال      data-new = يظهر في الصفحة الرئيسية -->
+    <div class="grid" id="prodGrid">
+
+      <article class="glass card" data-id="1" data-cat="w" data-price="120" data-new>
+        <div class="img g1"><img src="imgs/khatem1.jpeg" alt="" onerror="this.remove()">💍</div>
+        <h3 data-ar="ساعة يدوية فخمة" data-fr="Bague dorée fine" data-en="Fine gold ring"></h3>
+        <small data-t="women"></small>
+        <div class="pr">149 <span data-t="currency"></span></div>
+        <button class="btn p ob" style="margin:10px 4px 2px;padding:8px 18px" data-t="order"></button>
+      </article>
+
+      <article class="glass card" data-id="2" data-cat="w" data-price="350" data-new>
+        <div class="img g2"><img src="images/product2.jpg" alt="" onerror="this.remove()">👜</div>
+        <h3 data-ar="حقيبة يد صغيرة" data-fr="Petit sac à main" data-en="Mini handbag"></h3>
+        <small data-t="women"></small>
+        <div class="pr">350 <span data-t="currency"></span></div>
+        <button class="btn p ob" style="margin:10px 4px 2px;padding:8px 18px" data-t="order"></button>
+      </article>
+
+      <article class="glass card" data-id="3" data-cat="w" data-price="180">
+        <div class="img g3"><img src="images/product3.jpg" alt="" onerror="this.remove()">📿</div>
+        <h3 data-ar="قلادة لؤلؤ" data-fr="Collier de perles" data-en="Pearl necklace"></h3>
+        <small data-t="women"></small>
+        <div class="pr">180 <span data-t="currency"></span></div>
+        <button class="btn p ob" style="margin:10px 4px 2px;padding:8px 18px" data-t="order"></button>
+      </article>
+
+      <article class="glass card" data-id="4" data-cat="w" data-price="220" data-new>
+        <div class="img g4"><img src="images/product4.jpg" alt="" onerror="this.remove()">🕶️</div>
+        <h3 data-ar="نظارة شمسية" data-fr="Lunettes de soleil" data-en="Sunglasses"></h3>
+        <small data-t="women"></small>
+        <div class="pr">220 <span data-t="currency"></span></div>
+        <button class="btn p ob" style="margin:10px 4px 2px;padding:8px 18px" data-t="order"></button>
+      </article>
+
+      <article class="glass card" data-id="5" data-cat="w" data-price="150">
+        <div class="img g5"><img src="images/product5.jpg" alt="" onerror="this.remove()">🧣</div>
+        <h3 data-ar="وشاح حريري" data-fr="Foulard en soie" data-en="Silk scarf"></h3>
+        <small data-t="women"></small>
+        <div class="pr">150 <span data-t="currency"></span></div>
+        <button class="btn p ob" style="margin:10px 4px 2px;padding:8px 18px" data-t="order"></button>
+      </article>
+
+      <article class="glass card" data-id="6" data-cat="m" data-price="480" data-new>
+        <div class="img g4"><img src="images/product6.jpg" alt="" onerror="this.remove()">⌚</div>
+        <h3 data-ar="ساعة كلاسيكية" data-fr="Montre classique" data-en="Classic watch"></h3>
+        <small data-t="men"></small>
+        <div class="pr">480 <span data-t="currency"></span></div>
+        <button class="btn p ob" style="margin:10px 4px 2px;padding:8px 18px" data-t="order"></button>
+      </article>
+
+      <article class="glass card" data-id="7" data-cat="m" data-price="260">
+        <div class="img g1"><img src="images/product7.jpg" alt="" onerror="this.remove()">👝</div>
+        <h3 data-ar="محفظة جلدية" data-fr="Portefeuille en cuir" data-en="Leather wallet"></h3>
+        <small data-t="men"></small>
+        <div class="pr">260 <span data-t="currency"></span></div>
+        <button class="btn p ob" style="margin:10px 4px 2px;padding:8px 18px" data-t="order"></button>
+      </article>
+
+      <article class="glass card" data-id="8" data-cat="m" data-price="90">
+        <div class="img g3"><img src="images/product8.jpg" alt="" onerror="this.remove()">🧢</div>
+        <h3 data-ar="قبعة عصرية" data-fr="Casquette moderne" data-en="Modern cap"></h3>
+        <small data-t="men"></small>
+        <div class="pr">90 <span data-t="currency"></span></div>
+        <button class="btn p ob" style="margin:10px 4px 2px;padding:8px 18px" data-t="order"></button>
+      </article>
+
+      <article class="glass card" data-id="9" data-cat="m" data-price="110">
+        <div class="img g5"><img src="images/product9.jpg" alt="" onerror="this.remove()">📎</div>
+        <h3 data-ar="مشبك ربطة عنق" data-fr="Pince à cravate" data-en="Tie clip"></h3>
+        <small data-t="men"></small>
+        <div class="pr">110 <span data-t="currency"></span></div>
+        <button class="btn p ob" style="margin:10px 4px 2px;padding:8px 18px" data-t="order"></button>
+      </article>
+
+      <article class="glass card" data-id="10" data-cat="m" data-price="390" data-new>
+        <div class="img g2"><img src="images/product10.jpg" alt="" onerror="this.remove()">🎒</div>
+        <h3 data-ar="حقيبة ظهر أنيقة" data-fr="Sac à dos élégant" data-en="Sleek backpack"></h3>
+        <small data-t="men"></small>
+        <div class="pr">390 <span data-t="currency"></span></div>
+        <button class="btn p ob" style="margin:10px 4px 2px;padding:8px 18px" data-t="order"></button>
+      </article>
+
+    </div>
+  </section>
+
+  <section class="page" id="about">
+    <div class="glass box"><h2 style="margin-top:0" data-t="about_h"></h2><p data-t="about_who"></p><p data-t="about_do"></p><p data-t="about_goal"></p></div>
+  </section>
+</main>
+
+<div id="modal"><div class="glass box"><h3 id="mTitle" style="margin-bottom:14px"></h3>
+<input id="oN" data-ph="o_name"><input id="oP" type="tel" data-ph="o_phone"><input id="oC" data-ph="o_city"><textarea id="oA" rows="2" data-ph="o_addr"></textarea><input id="oQ" type="number" min="1" value="1" data-ph="o_qty">
+<div id="oMsg"></div><button class="btn p" id="oSend" data-t="o_send"></button> <button class="btn" id="oCancel" data-t="o_cancel"></button></div></div>
+<footer>© 2026 VELTOR</footer>
+
+<script>
+const EMAIL="instabizniz.25@gmail.com";
+const T={
+ar:{dir:"rtl",nav_home:"الرئيسية",nav_products:"المنتجات",nav_about:"من نحن",
+promo:"🔥 عرض خاص: خصم 20% على جميع الإكسسوارات  •  ✨ منتجات جديدة وصلت  •  🚚 توصيل لجميع المدن",
+h1:"إكسسوارات تعبّر عنك",sub:"تشكيلة أنيقة للنساء والرجال بتصاميم عصرية وبسيطة.",shop:"تسوّق الآن",
+welcome:"مرحباً بك في VELTOR! نقدّم لك إكسسوارات مختارة بعناية للرجال والنساء. تصفّح مجموعتنا واكتشف ما يناسب أسلوبك.",
+new:"أحدث المنتجات",women:"نساء",men:"رجال",currency:"درهم",
+about_h:"من نحن",about_who:"أنا [اسمك]، صاحب هذا المتجر وشغوف بعالم الإكسسوارات والموضة.",about_do:"أقوم باختيار وبيع إكسسوارات عصرية للرجال والنساء بأسعار مناسبة.",about_goal:"هدف الموقع: تقديم تجربة تسوّق بسيطة وأنيقة وجودة تثق بها.",
+order:"اطلب الآن",o_name:"الاسم الكامل",o_phone:"رقم الهاتف",o_city:"المدينة",o_addr:"العنوان",o_qty:"الكمية",o_send:"تأكيد الطلب",o_cancel:"إلغاء",fill:"المرجو ملء جميع الحقول",ok:"✅ تم إرسال طلبك بنجاح، سنتصل بك قريباً",fail:"❌ تعذر إرسال الطلب، حاول مرة أخرى"},
+fr:{dir:"ltr",nav_home:"Accueil",nav_products:"Produits",nav_about:"À propos",
+promo:"🔥 Offre spéciale : -20 % sur tous les accessoires  •  ✨ Nouveautés arrivées  •  🚚 Livraison dans toutes les villes",
+h1:"Des accessoires qui vous ressemblent",sub:"Une sélection élégante pour femmes et hommes, au design moderne et minimal.",shop:"Acheter",
+welcome:"Bienvenue chez VELTOR ! Des accessoires choisis avec soin pour hommes et femmes. Parcourez la collection et trouvez votre style.",
+new:"Nouveautés",women:"Femmes",men:"Hommes",currency:"MAD",
+about_h:"À propos",about_who:"Je suis [votre nom], propriétaire de cette boutique et passionné d’accessoires et de mode.",about_do:"Je sélectionne et vends des accessoires modernes pour hommes et femmes à prix abordables.",about_goal:"Objectif du site : offrir une expérience d’achat simple, élégante et de qualité.",
+order:"Commander",o_name:"Nom complet",o_phone:"Téléphone",o_city:"Ville",o_addr:"Adresse",o_qty:"Quantité",o_send:"Confirmer la commande",o_cancel:"Annuler",fill:"Veuillez remplir tous les champs",ok:"✅ Commande envoyée, nous vous contacterons bientôt",fail:"❌ Échec de l’envoi, réessayez"},
+en:{dir:"ltr",nav_home:"Home",nav_products:"Products",nav_about:"About",
+promo:"🔥 Special offer: 20% off all accessories  •  ✨ New arrivals  •  🚚 Delivery to all cities",
+h1:"Accessories that speak for you",sub:"An elegant selection for women and men with a modern, minimal design.",shop:"Shop now",
+welcome:"Welcome to VELTOR! Carefully chosen accessories for men and women. Browse the collection and find your style.",
+new:"New arrivals",women:"Women",men:"Men",currency:"MAD",
+about_h:"About",about_who:"I’m [your name], the owner of this shop and a passionate fan of accessories and fashion.",about_do:"I select and sell modern accessories for men and women at fair prices.",about_goal:"Site goal: a simple, elegant shopping experience with quality you can trust.",
+order:"Order now",o_name:"Full name",o_phone:"Phone number",o_city:"City",o_addr:"Address",o_qty:"Quantity",o_send:"Confirm order",o_cancel:"Cancel",fill:"Please fill in all fields",ok:"✅ Order sent, we’ll contact you soon",fail:"❌ Could not send, please try again"}
+};
+let lang="ar",cat="w";
+const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
+const t=k=>T[lang][k]||k;
+try{lang=localStorage.getItem("lang")||"ar"}catch(e){}
+
+// الصفحة الرئيسية: نسخ المنتجات الجديدة (data-new)
+$("#newGrid").append(...$$("#prodGrid [data-new]").map(c=>c.cloneNode(true)));
+
+function render(){
+  document.documentElement.lang=lang;document.documentElement.dir=T[lang].dir;
+  $$("[data-t]").forEach(e=>e.textContent=t(e.dataset.t));
+  $$("[data-ar]").forEach(e=>e.textContent=e.dataset[lang]);
+  $$("[data-ph]").forEach(e=>e.placeholder=t(e.dataset.ph));
+  $$(".lang button").forEach(b=>b.classList.toggle("on",b.dataset.l==lang));
+  const cur=(location.hash||"#home").slice(1);
+  $("#nav").innerHTML=["home","products","about"].map(p=>`<a href="#${p}" class="${p==cur?"on":""}">${t("nav_"+p)}</a>`).join("");
+  $$("#prodGrid .card").forEach(c=>c.style.display=c.dataset.cat==cat?"":"none");
+  $$(".tabs button").forEach(b=>b.classList.toggle("on",b.dataset.c==cat));
+  tilt();
+}
+function tilt(){$$(".card").forEach(c=>{c.onmousemove=e=>{const r=c.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;c.style.transform=`rotateY(${x*16}deg) rotateX(${-y*16}deg) translateY(-4px)`};c.onmouseleave=()=>c.style.transform=""})}
+function go(p){location.hash=p}
+function show(){const h=(location.hash||"#home").slice(1);$$(".page").forEach(p=>p.classList.toggle("on",p.id==h));if(!$("#"+h))$("#home").classList.add("on");render();scrollTo(0,0)}
+$$(".lang button").forEach(b=>b.onclick=()=>{lang=b.dataset.l;try{localStorage.setItem("lang",lang)}catch(e){}render()});
+$$(".tabs button").forEach(b=>b.onclick=()=>{cat=b.dataset.c;render()});
+addEventListener("hashchange",show);
+
+// الطلب / Order
+let cur=null;
+document.addEventListener("click",e=>{const b=e.target.closest(".ob");if(!b)return;const c=b.closest(".card"),h=c.querySelector("h3");
+  cur={id:c.dataset.id,p:+c.dataset.price,n:{ar:h.dataset.ar,fr:h.dataset.fr,en:h.dataset.en}};
+  $("#mTitle").textContent=cur.n[lang]+" — "+cur.p+" "+t("currency");$("#oMsg").textContent="";$("#modal").style.display="grid"});
+$("#oCancel").onclick=()=>$("#modal").style.display="none";
+$("#oSend").onclick=async()=>{
+  const n=$("#oN").value.trim(),ph=$("#oP").value.trim(),ci=$("#oC").value.trim(),ad=$("#oA").value.trim(),q=Math.max(1,parseInt($("#oQ").value)||1);
+  if(!n||!ph||!ci||!ad){$("#oMsg").textContent=t("fill");return}
+  $("#oMsg").textContent="...";
+  try{
+    const r=await fetch("https://formsubmit.co/ajax/"+EMAIL,{method:"POST",headers:{"Content-Type":"application/json","Accept":"application/json"},body:JSON.stringify({_subject:"VELTOR - New order: "+cur.n.en,_template:"table",Product:cur.n.en+" (#"+cur.id+")",Quantity:q,Total:(q*cur.p)+" MAD",Name:n,Phone:ph,City:ci,Address:ad,Language:lang})});
+    const j=await r.json();
+    if(r.ok&&(j.success==="true"||j.success===true)){$("#oMsg").textContent=t("ok");["#oN","#oP","#oC","#oA"].forEach(s=>$(s).value="")}else throw 0
+  }catch(e){$("#oMsg").textContent=t("fail")}
+};
+show();
+</script>
+</body>
+</html>
